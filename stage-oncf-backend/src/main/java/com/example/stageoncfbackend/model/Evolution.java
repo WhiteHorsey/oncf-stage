@@ -1,6 +1,6 @@
 package com.example.stageoncfbackend.model;
 
-
+import com.example.stageoncfbackend.model.enums.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+
 import java.util.Date;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -17,24 +18,32 @@ import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Bug extends DateAudit {
-
+public class Evolution extends DateAudit {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
     @Enumerated(EnumType.STRING)
-    private BugType bugType;
+    private EvolutionType evolutionType;
     private String title;
-    private String status; // etat
+    private String recommendedBy;
+    private String module;
     @Enumerated(EnumType.STRING)
-    private DangerType dangerType;
-    private String managerProvider; // responsablePrestataire
+    private PhaseType phase;
+    private String application;
+    @Enumerated(EnumType.STRING)
+    private ChannelType channelType;
+    @Enumerated(EnumType.STRING)
+    private ExploitationType exploitationType;
+    private int priority;
+    private boolean needMeeting;
     @JsonFormat(pattern = "dd/MM/yy")
-    private Date  planifiedResolutionDate;
+    private Date planifiedMeetingDate;
     @JsonFormat(pattern = "dd/MM/yy")
-    private Date  resolutionDate;
+    private Date meetingDate;
     @JsonFormat(pattern = "dd/MM/yy")
     private Date productionDate;
+    private int percentage;
+    @Enumerated(EnumType.STRING)
+    private StuationType stuationType;
     private String observation;
-
 }

@@ -1,4 +1,4 @@
-package com.example.stageoncfbackend.constroller;
+package com.example.stageoncfbackend.controller;
 
 import com.example.stageoncfbackend.dto.CreateBugRequestDTO;
 import com.example.stageoncfbackend.model.Bug;

@@ -17,24 +17,25 @@ import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Bug extends DateAudit {
-
+public class BugFix extends DateAudit {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
-    @Enumerated(EnumType.STRING)
-    private BugType bugType;
     private String title;
-    private String status; // etat
+    @Enumerated(EnumType.STRING)
+    private BugFixType bugFixType;
+    private String manager;
+    private String application;
     @Enumerated(EnumType.STRING)
     private DangerType dangerType;
-    private String managerProvider; // responsablePrestataire
+    private String openedBy;
+    @Enumerated(EnumType.STRING)
+    private ChannelType channelType;
+    @Enumerated(EnumType.STRING)
+    private StuationType stuationType;
     @JsonFormat(pattern = "dd/MM/yy")
-    private Date  planifiedResolutionDate;
+    private Date planifiedBugFixDate;
     @JsonFormat(pattern = "dd/MM/yy")
-    private Date  resolutionDate;
-    @JsonFormat(pattern = "dd/MM/yy")
-    private Date productionDate;
+    private Date bugFixDate;
     private String observation;
-
 }
