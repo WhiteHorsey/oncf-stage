@@ -15,6 +15,8 @@ import java.util.List;
 public class BugServiceImpl implements BugService {
 
     private final BugRepository bugRepository;
+
+
     @Override
     public List<Bug> getAllBugs() {
         return bugRepository.findAll();

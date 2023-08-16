@@ -1,7 +1,7 @@
 package com.example.stageoncfbackend.dto;
 
-import com.example.stageoncfbackend.model.enums.BugType;
-import com.example.stageoncfbackend.model.enums.DangerType;
+import com.example.stageoncfbackend.model.enumss.BugType;
+import com.example.stageoncfbackend.model.enumss.DangerType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 

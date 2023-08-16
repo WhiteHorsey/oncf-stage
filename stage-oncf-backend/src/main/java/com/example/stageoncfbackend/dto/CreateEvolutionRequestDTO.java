@@ -1,6 +1,6 @@
 package com.example.stageoncfbackend.dto;
 
-import com.example.stageoncfbackend.model.enums.*;
+import com.example.stageoncfbackend.model.enumss.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 

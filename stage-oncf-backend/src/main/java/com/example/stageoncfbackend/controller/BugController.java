@@ -9,23 +9,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/bugs")
 @RequiredArgsConstructor
 public class BugController {
 
     private final BugService bugService;
 
-    @GetMapping
+    @GetMapping("/api/bugs")
     public List<Bug> getAllBugs() {
         return bugService.getAllBugs();
     }
 
-    @PostMapping
+    @PostMapping("/api/bugs")
     public Bug createBug(@RequestBody CreateBugRequestDTO requestDTO) {
         return bugService.createBug(requestDTO);
     }
 
-    @DeleteMapping("/{bugId}")
+    @DeleteMapping("/api/bugs/{bugId}")
     public void getAllBugs(@PathVariable Long bugId) {
         bugService.deleteBug(bugId);
     }
