@@ -1,6 +1,8 @@
 package com.example.stageoncfbackend.model;
 
 
+import com.example.stageoncfbackend.model.enums.BugType;
+import com.example.stageoncfbackend.model.enums.DangerType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
