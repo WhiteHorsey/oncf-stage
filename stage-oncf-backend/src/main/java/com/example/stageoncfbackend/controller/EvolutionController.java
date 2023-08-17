@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/evolutions")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:3000")
 public class EvolutionController {
 
     private final EvolutionService evolutionService;

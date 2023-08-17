@@ -1,6 +1,7 @@
 package com.example.stageoncfbackend.model;
 
 
+
 import com.example.stageoncfbackend.model.enumss.BugType;
 import com.example.stageoncfbackend.model.enumss.DangerType;
 import com.fasterxml.jackson.annotation.JsonFormat;
