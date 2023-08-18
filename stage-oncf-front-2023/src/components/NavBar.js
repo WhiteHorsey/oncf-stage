@@ -40,7 +40,7 @@ function NavBar() {
               <Link
                 to="/bugs"
                 className={`block py-2 pl-3 pr-4 bg-blue-700 rounded md:bg-transparent ${
-                  location.pathname == "/bugs" ? "text-red-700" : "text-black"
+                  location.pathname == "/bugs" || location.pathname == "/bugs/add" ? "text-orange-600" : "text-black"
                 }  md:p-0 `}
               >
                 Bugs
@@ -50,7 +50,7 @@ function NavBar() {
               <Link
                 to="/bugFixs"
                 className={`block py-2 pl-3 pr-4 bg-blue-700 rounded md:bg-transparent ${
-                  location.pathname == "/bugFixs" ? "text-red-700" : "text-black"
+                  location.pathname == "/bugFixs" || location.pathname == "/bugFixs/add" ? "text-orange-600" : "text-black"
                 }  md:p-0 `}
               >
                 Bug Fixs
@@ -60,7 +60,7 @@ function NavBar() {
               <Link
                 to="/evolutions"
                 className={`block py-2 pl-3 pr-4 bg-blue-700 rounded md:bg-transparent ${
-                  location.pathname == "/evolutions" ? "text-red-700" : "text-black"
+                  location.pathname == "/evolutions" || location.pathname == "/evolutions/add" ? "text-orange-600" : "text-black"
                 }  md:p-0 `}
               >
                 Evolutions

@@ -3,22 +3,18 @@ import NavBar from "../../components/NavBar";
 import { bugfixsTableHeaderTitles } from "../../utils/DataHelper";
 import axios from "axios";
 import BugFixTable from "../../components/BugFixTable";
+import { Link } from "react-router-dom";
 
 function BugFixsPage() {
   const [bugFixs, setBugFixs] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null); // New state for handling errors
 
   useEffect(() => {
     async function fetchData() {
       try {
         const { data } = await axios.get("http://localhost:8080/api/bugFix"); // Replace with your API endpoint
         setBugFixs(data);
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setError(error); // Set the error state
-        setLoading(false);
       }
     }
 
@@ -63,8 +59,8 @@ function BugFixsPage() {
                   </form>
                 </div>
                 <div className="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                  <button
-                    type="button"
+                  <Link
+                    to="/bugFixs/add"
                     className="flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
                   >
                     <svg className="h-3.5 w-3.5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -75,11 +71,11 @@ function BugFixsPage() {
                       />
                     </svg>
                     Add product
-                  </button>
+                  </Link>
                 </div>
               </div>
               <div className="overflow-x-auto">
-                <BugFixTable header={bugfixsTableHeaderTitles} content={bugFixs} />
+                <BugFixTable header={bugfixsTableHeaderTitles} content={bugFixs} setBugFixs={setBugFixs} />
               </div>
             </div>
           </div>
